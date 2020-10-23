@@ -130,6 +130,7 @@ namespace stocktake
 
         private void button4_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectedIndex =2;
             int r= ora.ExecuteNonQuery("delete from  temp_zhy_excption_2017th");
             richTextBox1.Text = "清除记录数:"+r.ToString()+"\r\n";
 
@@ -315,10 +316,12 @@ namespace stocktake
             string sql=$"insert into t_mat_batchlibrary select goodsid,to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),36,36,'00000000',add_months(to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'), 36),sysdate   from temp_zhy_excption_2017th where (goodsid) not in ( select goodsid from t_mat_batchlibrary where batchcode = '00000000') group by goodsid";
           
            int result = ora.ExecuteNonQuery(sql);
+            tabControl1.SelectedIndex = 2;
             if (result > 0)
             {
                 this.Invoke(new Action(() =>
                 {
+                    
                     richTextBox1.AppendText("补录批次库数据成功" + "\r\n");
 
                 }));
@@ -359,6 +362,8 @@ namespace stocktake
                     d.warehouseid,d.warehousename,d.warehouseid,d.warehousename,a.placecode,a.batchcode
                     having sum(a.sumquantity) > 0";
             //  richTextBox1.AppendText(string.Format(sql, bitchcode) + "\r\n");
+            tabControl1.SelectedIndex = 2;
+
             int result = ora.ExecuteNonQuery(string.Format(sql, bitchcode));
             if (result > 0)
             {
@@ -387,6 +392,7 @@ namespace stocktake
                             )";
 
             int result = ora.ExecuteNonQuery(sql);
+            tabControl1.SelectedIndex = 2;
             if (result > 0)
             {
                 this.Invoke(new Action(() =>
@@ -413,6 +419,7 @@ namespace stocktake
                             having sum(quantity)>0";
 
             int result = ora.ExecuteNonQuery(sql);
+            tabControl1.SelectedIndex = 2;
             if (result > 0)
             {
                 this.Invoke(new Action(() =>
@@ -452,7 +459,8 @@ namespace stocktake
                             having sum(a.quantity)>0";
 
                             int result = ora.ExecuteNonQuery(string.Format(sql, bitchcode));
-                            if (result > 0)
+            tabControl1.SelectedIndex = 2;
+            if (result > 0)
                             {
                                 this.Invoke(new Action(() =>
                                 {
@@ -468,6 +476,72 @@ namespace stocktake
 
                                 }));
                             }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            string bitchcode = dateTimePicker2.Value.Year.ToString() + (dateTimePicker2.Value.Month < 10 ? "0" + dateTimePicker2.Value.Month.ToString() : dateTimePicker2.Value.Month.ToString()) + (dateTimePicker2.Value.Day < 10 ? "0" + dateTimePicker2.Value.Day.ToString() : dateTimePicker2.Value.Day.ToString()) + "0001";
+            string sql = @" begin 
+                            insert into t_mat_businesswbk
+
+                            select 'OU'||a.businessid||'{0}',sysdate,-40,'盘亏出库',
+                            a.businessid,a.goodsid,b.goodscode,b.goodsname,sum(a.sumquantity)
+                            from t_mat_businessstock a 
+                            inner join t_pdm_goodsinfo b 
+                            on a.goodsid = b.goodsid 
+                            inner join t_pdm_goodsort c 
+                            on b.sortid = c.sortid
+                            where 
+                            1=1 --d.warehouseid in ('gdth','jhth')
+                            group by a.businessid,a.goodsid,b.goodscode,b.goodsname
+                            having sum(a.sumquantity)>0;
+
+                            -- Step7 删除现有库存
+                            delete t_mat_businessstock ;
+
+                            -- Step8 记录事业部库存入库流水
+
+                            insert into t_mat_businesswbk
+
+                            select 'IN'||'syyb{1}',sysdate,40,'盘盈入库',
+                            'SYYB',a.goodsid,b.goodscode,b.goodsname,sum(a.quantity)
+                            from temp_zhy_excption_2017th a 
+                            inner join t_pdm_goodsinfo b 
+                            on a.goodsid = b.goodsid 
+                            inner join t_pdm_goodsort c 
+                            on b.sortid = c.sortid
+                            group by a.goodsid,b.goodscode,b.goodsname
+                            having sum(a.quantity)>0 
+                            ;
+
+
+                            -- Step9 将此次盘点库存，初始进事业部库存，默认 SYYB 事业一部 (盘盈入库)
+
+                            insert into t_mat_businessstock
+
+                            select 'SYYB',goodsid,sum(quantity),0 from temp_zhy_excption_2017th 
+                            group by goodsid ; 
+                            end;";
+
+            //  richTextBox1.AppendText(string.Format(sql, bitchcode, bitchcode) + "\r\n");
+           int result = ora.ExecuteNonQuery(string.Format(sql, bitchcode, bitchcode));
+            tabControl1.SelectedIndex = 2;
+            if (result > 0)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    richTextBox1.AppendText("物料仓盘点后续操作成功" + "\r\n");
+
+                }));
+            }
+            else
+            {
+                this.Invoke(new Action(() =>
+                {
+                    richTextBox1.AppendText("物料仓盘点后续操作失败" + "\r\n");
+
+                }));
+            }
         }
     }
 }

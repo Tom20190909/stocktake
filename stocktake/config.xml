@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppSet>
+  <connstr>SERVER=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.28.18.98)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=newwms)));uid=dswmsuser;pwd=sys2016;</connstr>
+  <sqlconnstr>Data Source=172.28.18.97;Initial Catalog=JHH_baobiaoceshi;Persist Security Info=True;User ID=sa;Password=4cemgehI</sqlconnstr>
+  <WebServiceurl>http://113.106.92.118:677/WebService.asmx</WebServiceurl>
+  <ShopName>东莞欣佳清溪店</ShopName>
+  <ShopCode>C00000012801</ShopCode>
+  <userid>13929430261</userid>
+  <Instructions>6</Instructions>
+  <Ins_Month>2018-10</Ins_Month>
+</AppSet>

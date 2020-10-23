@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getmssqldt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strsql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getmssqldtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getmssqldtResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="remsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exemssql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strsql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exemssqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="exemssqlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getmysqldt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strsql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getmysqldtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getmysqldtResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="remsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exemysql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strsql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exemysqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="exemysqlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPImg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPImgResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InventoryNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inventoryDetaildt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpInventoryResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="remsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getmssqldtSoapIn">
+    <wsdl:part name="parameters" element="tns:getmssqldt" />
+  </wsdl:message>
+  <wsdl:message name="getmssqldtSoapOut">
+    <wsdl:part name="parameters" element="tns:getmssqldtResponse" />
+  </wsdl:message>
+  <wsdl:message name="exemssqlSoapIn">
+    <wsdl:part name="parameters" element="tns:exemssql" />
+  </wsdl:message>
+  <wsdl:message name="exemssqlSoapOut">
+    <wsdl:part name="parameters" element="tns:exemssqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getmysqldtSoapIn">
+    <wsdl:part name="parameters" element="tns:getmysqldt" />
+  </wsdl:message>
+  <wsdl:message name="getmysqldtSoapOut">
+    <wsdl:part name="parameters" element="tns:getmysqldtResponse" />
+  </wsdl:message>
+  <wsdl:message name="exemysqlSoapIn">
+    <wsdl:part name="parameters" element="tns:exemysql" />
+  </wsdl:message>
+  <wsdl:message name="exemysqlSoapOut">
+    <wsdl:part name="parameters" element="tns:exemysqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetERPImgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPImg" />
+  </wsdl:message>
+  <wsdl:message name="GetERPImgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:UpInventory" />
+  </wsdl:message>
+  <wsdl:message name="UpInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:UpInventoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="getmssqldt">
+      <wsdl:input message="tns:getmssqldtSoapIn" />
+      <wsdl:output message="tns:getmssqldtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exemssql">
+      <wsdl:input message="tns:exemssqlSoapIn" />
+      <wsdl:output message="tns:exemssqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getmysqldt">
+      <wsdl:input message="tns:getmysqldtSoapIn" />
+      <wsdl:output message="tns:getmysqldtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exemysql">
+      <wsdl:input message="tns:exemysqlSoapIn" />
+      <wsdl:output message="tns:exemysqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPImg">
+      <wsdl:input message="tns:GetERPImgSoapIn" />
+      <wsdl:output message="tns:GetERPImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpInventory">
+      <wsdl:input message="tns:UpInventorySoapIn" />
+      <wsdl:output message="tns:UpInventorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getmssqldt">
+      <soap:operation soapAction="http://tempuri.org/getmssqldt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exemssql">
+      <soap:operation soapAction="http://tempuri.org/exemssql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getmysqldt">
+      <soap:operation soapAction="http://tempuri.org/getmysqldt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exemysql">
+      <soap:operation soapAction="http://tempuri.org/exemysql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPImg">
+      <soap:operation soapAction="http://tempuri.org/GetERPImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpInventory">
+      <soap:operation soapAction="http://tempuri.org/UpInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getmssqldt">
+      <soap12:operation soapAction="http://tempuri.org/getmssqldt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exemssql">
+      <soap12:operation soapAction="http://tempuri.org/exemssql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getmysqldt">
+      <soap12:operation soapAction="http://tempuri.org/getmysqldt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exemysql">
+      <soap12:operation soapAction="http://tempuri.org/exemysql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPImg">
+      <soap12:operation soapAction="http://tempuri.org/GetERPImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpInventory">
+      <soap12:operation soapAction="http://tempuri.org/UpInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://113.106.92.118:677/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://113.106.92.118:677/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,31 +1,4 @@
 ﻿1>------ 已启动全部重新生成: 项目: stocktake, 配置: Debug Any CPU ------
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3270: 所生成项目的处理器架构“AMD64”与引用“JetEntityFrameworkProvider, Version=6.0.0.0, Culture=neutral, PublicKeyToken=756cf6beb8fe7b41, processorArchitecture=x86”的处理器架构“x86”不匹配。这种不匹配可能会导致运行时失败。请考虑通过配置管理器更改您的项目的目标处理器架构，以使您的项目与引用间的处理器架构保持一致，或者为引用关联一个与您的项目的目标处理器架构相符的处理器架构。
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3270: 所生成项目的处理器架构“AMD64”与引用“Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64”的处理器架构“x86”不匹配。这种不匹配可能会导致运行时失败。请考虑通过配置管理器更改您的项目的目标处理器架构，以使您的项目与引用间的处理器架构保持一致，或者为引用关联一个与您的项目的目标处理器架构相符的处理器架构。
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(40,16,40,32): warning CS0618: 'OracleConnection' is obsolete: 'OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(18,17,18,33): warning CS0618: 'OracleConnection' is obsolete: 'OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\bindInvMan.cs(110,28,110,38): warning CS0168: The variable 'U_clientid' is declared but never used
-1>D:\stocktake_forjhh\stocktake\stocktake\bindInvMan.cs(246,17,246,20): warning CS0219: The variable 'col' is assigned but its value is never used
-1>D:\stocktake_forjhh\stocktake\stocktake\Form1.cs(249,48,249,56): warning CS0168: The variable 'ItemCode' is declared but never used
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(47,32,47,48): warning CS0618: 'OracleConnection' is obsolete: 'OracleConnection has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(74,24,74,37): warning CS0618: 'OracleCommand' is obsolete: 'OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(74,48,74,61): warning CS0618: 'OracleCommand' is obsolete: 'OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(109,24,109,37): warning CS0618: 'OracleCommand' is obsolete: 'OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(109,48,109,61): warning CS0618: 'OracleCommand' is obsolete: 'OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(114,25,114,42): warning CS0618: 'OracleDataAdapter' is obsolete: 'OracleDataAdapter has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(114,57,114,74): warning CS0618: 'OracleDataAdapter' is obsolete: 'OracleDataAdapter has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(117,38,117,40): warning CS0168: The variable 'ex' is declared but never used
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(156,13,156,26): warning CS0618: 'OracleCommand' is obsolete: 'OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\oraexec.cs(156,37,156,50): warning CS0618: 'OracleCommand' is obsolete: 'OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260'
-1>D:\stocktake_forjhh\stocktake\stocktake\rpt.Designer.cs(252,50,252,62): warning CS0169: The field 'rpt.richTextBox1' is never used
-1>D:\stocktake_forjhh\stocktake\stocktake\rpt.Designer.cs(253,50,253,62): warning CS0169: The field 'rpt.richTextBox2' is never used
-1>D:\stocktake_forjhh\stocktake\stocktake\sqlexec.cs(15,19,15,22): warning CS0169: The field 'Sqlexec.reg' is never used
-1>D:\stocktake_forjhh\stocktake\stocktake\rpt.Designer.cs(251,45,251,52): warning CS0169: The field 'rpt.button1' is never used
-1>CSC : warning CS8012: Referenced assembly 'Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342' targets a different processor.
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3506,5): warning MSB3178: 程序集“dll\Microsoft.Office.Interop.Access.dll”被错误地指定为一个文件。
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3506,5): warning MSB3178: 程序集“dll\Microsoft.Office.Interop.Excel.dll”被错误地指定为一个文件。
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3506,5): warning MSB3178: 程序集“dll\Microsoft.Vbe.Interop.dll”被错误地指定为一个文件。
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3506,5): warning MSB3178: 程序集“dll\Office.dll”被错误地指定为一个文件。
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3506,5): warning MSB3187: 引用程序集“D:\stocktake_forjhh\stocktake\packages\JetEntityFrameworkProvider.6.1.4\lib\JetEntityFrameworkProvider.dll”面向的是另一个处理器，而不是此应用程序。
-1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3506,5): warning MSB3187: 引用程序集“D:\stocktake_forjhh\stocktake\stocktake\bin\Debug\dll\Oracle.DataAccess.dll”面向的是另一个处理器，而不是此应用程序。
-1>  stocktake -> D:\stocktake_forjhh\stocktake\stocktake\bin\Debug\stocktake.exe
+1>d:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2084,5): warning MSB3270: 所生成项目的处理器架构“AMD64”与引用“JetEntityFrameworkProvider, Version=6.0.0.0, Culture=neutral, PublicKeyToken=756cf6beb8fe7b41, processorArchitecture=x86”的处理器架构“x86”不匹配。这种不匹配可能会导致运行时失败。请考虑通过配置管理器更改您的项目的目标处理器架构，以使您的项目与引用间的处理器架构保持一致，或者为引用关联一个与您的项目的目标处理器架构相符的处理器架构。
+1>d:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2084,5): warning MSB3270: 所生成项目的处理器架构“AMD64”与引用“Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64”的处理器架构“x86”不匹配。这种不匹配可能会导致运行时失败。请考虑通过配置管理器更改您的项目的目标处理器架构，以使您的项目与引用间的处理器架构保持一致，或者为引用关联一个与您的项目的目标处理器架构相符的处理器架构。
 ========== 全部重新生成: 成功 1 个，失败 0 个，跳过 0 个 ==========

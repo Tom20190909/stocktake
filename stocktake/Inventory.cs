@@ -82,7 +82,7 @@ namespace stocktake
 
         }
 
-
+        //test
         private void button2_Click(object sender, EventArgs e)
         {
             string remark = dateTimePicker1.Value.ToString("yyyy/MM/dd") + " " + comboBox1.Text + "盘点";

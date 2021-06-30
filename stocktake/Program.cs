@@ -17,9 +17,10 @@ namespace stocktake
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new scanbar());
-           //    Application.Run(new rpt());
-           //  Application.Run(new bindInvMan());
-            Application.Run(new Inventory());
+            //    Application.Run(new rpt());
+            //  Application.Run(new bindInvMan());
+              Application.Run(new Inventory());
+          //  Application.Run(new test());
 
         }
     }

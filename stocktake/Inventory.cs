@@ -87,10 +87,10 @@ namespace stocktake
         {
             string remark = dateTimePicker1.Value.ToString("yyyy/MM/dd") + " " + comboBox1.Text + "盘点";
             string PDDH = "PD" + comboBox1.SelectedValue.ToString() + "-" + dateTimePicker1.Value.Year.ToString() + (dateTimePicker1.Value.Month < 10 ? "0" + dateTimePicker1.Value.Month.ToString() : dateTimePicker1.Value.Month.ToString()) + (dateTimePicker1.Value.Day < 10 ? "0" + dateTimePicker1.Value.Day.ToString() : dateTimePicker1.Value.Day.ToString()) + "0001";
-            string insql = @"insert into t_mat_checkouttable(orderid,storageid,checktime,remark,makedatetime,productor,
+            string insql = @"insert into t_mat_checkouttable(orderid,storageid,comparedate,checktime,remark,makedatetime,productor,
                          checkstate,updatetime,dtype,exceptionorder,checkname,checktype,docentry,systype) values(";
-            insql += $"'{PDDH}','{comboBox1.SelectedValue.ToString()}',to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),'{remark}',to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),'Admin',";
-            insql += $"0,to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),'1','{remark}','{remark}',3,'1','K')";
+            insql += $"'{PDDH}','{comboBox1.SelectedValue.ToString()}',to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),'{remark}',to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),'Admin',";
+            insql += $"1,to_date('{dateTimePicker1.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),'1','{remark}','{remark}',3,'1','K')";
 
             // richTextBox1.Text = insql;
             ora.ExecuteNonQuery(insql);

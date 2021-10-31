@@ -335,7 +335,7 @@ namespace stocktake
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string sql = $"delete  from t_mat_batchlibrary where batchcode='00000000' and goodsspec='0' and goodsid in (select goodsid from temp_zhy_excption_2017th);insert into t_mat_batchlibrary select goodsid,to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),36,36,'00000000',add_months(to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'), 36),sysdate   from temp_zhy_excption_2017th where (goodsid) not in ( select goodsid from t_mat_batchlibrary where batchcode = '00000000') group by goodsid";
+            string sql = $"delete  from t_mat_batchlibrary where batchcode='00000000'  and goodsid in (select goodsid from temp_zhy_excption_2017th);insert into t_mat_batchlibrary select goodsid,to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),36,36,'00000000',add_months(to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'), 36),sysdate   from temp_zhy_excption_2017th where (goodsid) not in ( select goodsid from t_mat_batchlibrary where batchcode = '00000000') group by goodsid";
 
             int result = ora.ExecuteNonQuery(sql);
             tabControl1.SelectedIndex = 2;
@@ -363,7 +363,7 @@ namespace stocktake
         {
             string bitchcode = dateTimePicker2.Value.Year.ToString() + (dateTimePicker2.Value.Month < 10 ? "0" + dateTimePicker2.Value.Month.ToString() : dateTimePicker2.Value.Month.ToString()) + (dateTimePicker2.Value.Day < 10 ? "0" + dateTimePicker2.Value.Day.ToString() : dateTimePicker2.Value.Day.ToString()) + "0001";
 
-            string sql = @"insert into t_mat_warehousplacewbk
+            string sql =@"insert into t_mat_warehousplacewbk
                     select 'OU' || substr(placecode, 0, 4) || '{0}',sysdate,-40,'盘亏出库',
                     a.goodsid,b.goodscode,b.goodsname,b.brandid,e.brandname,b.sortid,c.sortname,sum(a.sumquantity),
                     d.warehouseid,d.warehousename,d.warehouseid,d.warehousename,a.placecode,a.batchcode,''

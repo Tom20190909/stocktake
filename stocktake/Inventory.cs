@@ -232,6 +232,7 @@ namespace stocktake
                     int i = 0;
                     int result = 0;
                     string insql;
+                   
                     for (int row = int.Parse(textBox1.Text); row < int.Parse(textBox2.Text) + 1; row++)
                     {
                         this.Invoke(new Action(() =>
@@ -240,9 +241,9 @@ namespace stocktake
                             this.button5.Enabled = false;
 
                         }));
-                        GOODSID = ((Microsoft.Office.Interop.Excel.Range)RSsheet.Cells[row, 3]).Text;
-                        PLACECODE = ((Microsoft.Office.Interop.Excel.Range)RSsheet.Cells[row, 2]).Text;
-                        QUANTITY = ((Microsoft.Office.Interop.Excel.Range)RSsheet.Cells[row, 5]).Text;
+                        GOODSID = ((Microsoft.Office.Interop.Excel.Range)RSsheet.Cells[row, 1]).Text;
+                        QUANTITY = ((Microsoft.Office.Interop.Excel.Range)RSsheet.Cells[row, 2]).Text;
+                        PLACECODE = ((Microsoft.Office.Interop.Excel.Range)RSsheet.Cells[row, 3]).Text;
                         if (int.TryParse(QUANTITY, out Qty))
                         {
 
@@ -334,7 +335,7 @@ namespace stocktake
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string sql = $"insert into t_mat_batchlibrary select goodsid,to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),36,36,'00000000',add_months(to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'), 36),sysdate   from temp_zhy_excption_2017th where (goodsid) not in ( select goodsid from t_mat_batchlibrary where batchcode = '00000000') group by goodsid";
+            string sql = $"delete  from t_mat_batchlibrary where batchcode='00000000' and goodsspec='0' and goodsid in (select goodsid from temp_zhy_excption_2017th);insert into t_mat_batchlibrary select goodsid,to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'),36,36,'00000000',add_months(to_date('{dateTimePicker2.Value.ToString("yyyy-MM-dd")}','yyyy-mm-dd'), 36),sysdate   from temp_zhy_excption_2017th where (goodsid) not in ( select goodsid from t_mat_batchlibrary where batchcode = '00000000') group by goodsid";
 
             int result = ora.ExecuteNonQuery(sql);
             tabControl1.SelectedIndex = 2;
@@ -351,7 +352,7 @@ namespace stocktake
             {
                 this.Invoke(new Action(() =>
                 {
-                    richTextBox1.AppendText("补录批次库数据失败" + "\r\n");
+                    richTextBox1.AppendText("没有需要补录的批次" + "\r\n");
 
                 }));
             }
